@@ -5,7 +5,7 @@ import { INCREASE_AGE } from './ageTypes';
 // reqFunction   (DONT DELETE THIS LINE: USED FOR BATTLECRY DUCK GENERATOR)
 function* increaseAgeReq(data) {
   yield delay(1000);
-  return yield put({type: "AGE_UP_ASYNC", age: data.age + 1})
+  return yield put({type: "AGE_UP_ASYNC", data: { age: data.age + 1, year: data.year + 1}})
 }
 
 
@@ -13,11 +13,11 @@ function* increaseAgeReq(data) {
 export function* increaseAge(action) {
   try {
 
-    const { age } = yield call(increaseAgeReq, action.payload);
+    const { data } = yield call(increaseAgeReq, action.payload);
     console.log("HERERERRERERER increaseAgeReducer");
-    console.log(age);
+    console.log(data);
 
-    yield put({ type: `${INCREASE_AGE}_SUCCESS`, payload: age })
+    yield put({ type: `${INCREASE_AGE}_SUCCESS`, payload: data })
   } catch(e) {
     yield put({ type: `${INCREASE_AGE}_FAIL`, payload: e.response })
   }

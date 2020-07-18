@@ -2,7 +2,7 @@
 import { INCREASE_AGE } from './ageTypes';
 
 const INITIAL_STATE = {
-  age: 0,
+  age: 27,
   year: 1993
 }
 
@@ -15,7 +15,7 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
       console.log("success");
       return {
         ...state,
-        age: action.payload
+        ...action.payload
       }
 
     case `${INCREASE_AGE}_FAIL`:

@@ -17,13 +17,13 @@ const AgeDetails = () => {
   },[ age, year ]);
 
   const handleIncreaseAge = () => {
-    increaseAge({age: 1});
+    increaseAge({age: currentAge, year: birthYear });
   }
 
   return (
     <div>
       <div className="Age-label">
-          your age: <span> { currentAge }</span>  / 
+          your age: <span> { currentAge }</span>  /
 
           your year: <span> { birthYear }</span>
         </div>
