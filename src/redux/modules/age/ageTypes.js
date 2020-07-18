@@ -1,2 +1,3 @@
 // exportActionTypes   (DONT DELETE THIS LINE: USED FOR BATTLECRY DUCK GENERATOR)
+export const DECREASE_AGE = 'age/DECREASE-AGE';
 export const INCREASE_AGE = 'age/INCREASE-AGE';

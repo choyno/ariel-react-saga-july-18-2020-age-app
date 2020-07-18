@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import {
   increaseAge,
+  decreaseAge,
 } from '../redux/modules/age/ageActions';
 
 export default () => {
@@ -14,6 +15,9 @@ export default () => {
     age,
     increaseAge(data){
       dispatch(increaseAge(data));
+    },
+    decreaseAge(data){
+      dispatch(decreaseAge(data));
     },
   };
 }

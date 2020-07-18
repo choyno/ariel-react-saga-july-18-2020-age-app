@@ -4,7 +4,6 @@ import age from './age/ageReducer'
 
 const reducer = combineReducers({
   age,
-
 });
 
 export default reducer
