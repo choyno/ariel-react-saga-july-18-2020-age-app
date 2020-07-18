@@ -7,27 +7,21 @@ const AgeDetails = () => {
   const { age:getAge, increaseAge, decreaseAge } = useAge();
   const { age,  year } = getAge;
 
-  const [currentAge, setCurrentAge] = useState(0);
-  const [birthYear, setBirthYear] = useState(0);
-
-  useEffect(() =>{
-    setCurrentAge(age);
-    setBirthYear(year);
-  },[ age, year ]);
 
   const handleIncreaseAge = () => {
-    increaseAge({age: currentAge, year: birthYear });
+    increaseAge({...getAge});
   }
 
   const handleDecreaseAge = () => {
-    decreaseAge({age: currentAge, year: birthYear });
+    decreaseAge({...getAge});
   }
+
 
   return (
     <div>
       <div className="Age-label">
-          your age: <span> { currentAge }</span>  /
-          your year: <span> { birthYear }</span>
+          your age: <span> { age }</span>  /
+          your year: <span> { year }</span>
         </div>
 
         <button onClick={ handleIncreaseAge }>Age UP</button>
